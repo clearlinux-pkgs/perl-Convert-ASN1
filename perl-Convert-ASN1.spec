@@ -4,7 +4,7 @@
 #
 Name     : perl-Convert-ASN1
 Version  : 0.27
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
 Summary  : Perl/CPAN Module Convert::ASN1 : Standard endecode of ASN1 structures
