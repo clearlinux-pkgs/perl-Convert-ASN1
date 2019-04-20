@@ -74,13 +74,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/Convert/ASN1.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Convert/ASN1.pod
-/usr/lib/perl5/vendor_perl/5.28.1/Convert/ASN1/Debug.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Convert/ASN1/IO.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Convert/ASN1/_decode.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Convert/ASN1/_encode.pm
-/usr/lib/perl5/vendor_perl/5.28.1/Convert/ASN1/parser.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1.pod
+/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/Debug.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/IO.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/_decode.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/_encode.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/parser.pm
 
 %files dev
 %defattr(-,root,root,-)
