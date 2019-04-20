@@ -4,10 +4,10 @@
 #
 Name     : perl-Convert-ASN1
 Version  : 0.27
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
-Summary  : 'Convert between perl data structures and ASN.1 encoded packets'
+Summary  : Perl/CPAN Module Convert::ASN1 : Standard endecode of ASN1 structures
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Convert-ASN1-license = %{version}-%{release}
@@ -22,6 +22,7 @@ ASN.1 definitions
 Summary: dev components for the perl-Convert-ASN1 package.
 Group: Development
 Provides: perl-Convert-ASN1-devel = %{version}-%{release}
+Requires: perl-Convert-ASN1 = %{version}-%{release}
 
 %description dev
 dev components for the perl-Convert-ASN1 package.
