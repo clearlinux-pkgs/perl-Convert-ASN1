@@ -4,13 +4,14 @@
 #
 Name     : perl-Convert-ASN1
 Version  : 0.27
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
-Summary  : Perl/CPAN Module Convert::ASN1 : Standard endecode of ASN1 structures
+Summary  : 'Convert between perl data structures and ASN.1 encoded packets'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Convert-ASN1-license = %{version}-%{release}
+Requires: perl-Convert-ASN1-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -36,14 +37,24 @@ Group: Default
 license components for the perl-Convert-ASN1 package.
 
 
+%package perl
+Summary: perl components for the perl-Convert-ASN1 package.
+Group: Default
+Requires: perl-Convert-ASN1 = %{version}-%{release}
+
+%description perl
+perl components for the perl-Convert-ASN1 package.
+
+
 %prep
 %setup -q -n Convert-ASN1-0.27
+cd %{_builddir}/Convert-ASN1-0.27
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -53,7 +64,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -62,7 +73,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Convert-ASN1
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Convert-ASN1/LICENSE
+cp %{_builddir}/Convert-ASN1-0.27/LICENSE %{buildroot}/usr/share/package-licenses/perl-Convert-ASN1/2bf572da781c106f615754e11dd1523480f4a25b
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -75,13 +86,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1.pod
-/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/Debug.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/IO.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/_decode.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/_encode.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Convert/ASN1/parser.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -89,4 +93,14 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Convert-ASN1/LICENSE
+/usr/share/package-licenses/perl-Convert-ASN1/2bf572da781c106f615754e11dd1523480f4a25b
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1.pod
+/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/Debug.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/IO.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/_decode.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/_encode.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/parser.pm
