@@ -4,7 +4,7 @@
 #
 Name     : perl-Convert-ASN1
 Version  : 0.27
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
 Summary  : 'Convert between perl data structures and ASN.1 encoded packets'
@@ -97,10 +97,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1.pod
-/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/Debug.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/IO.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/_decode.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/_encode.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Convert/ASN1/parser.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Convert/ASN1.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Convert/ASN1.pod
+/usr/lib/perl5/vendor_perl/5.30.2/Convert/ASN1/Debug.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Convert/ASN1/IO.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Convert/ASN1/_decode.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Convert/ASN1/_encode.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Convert/ASN1/parser.pm
