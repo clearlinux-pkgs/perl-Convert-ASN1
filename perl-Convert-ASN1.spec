@@ -4,7 +4,7 @@
 #
 Name     : perl-Convert-ASN1
 Version  : 0.27
-Release  : 19
+Release  : 20
 URL      : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GB/GBARR/Convert-ASN1-0.27.tar.gz
 Summary  : 'Convert between perl data structures and ASN.1 encoded packets'
