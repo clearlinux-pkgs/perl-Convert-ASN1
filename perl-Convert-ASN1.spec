@@ -4,12 +4,13 @@
 #
 Name     : perl-Convert-ASN1
 Version  : 0.33
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/Convert-ASN1-0.33.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/Convert-ASN1-0.33.tar.gz
 Summary  : 'Convert between perl data structures and ASN.1 encoded packets'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-Convert-ASN1-license = %{version}-%{release}
 Requires: perl-Convert-ASN1-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
@@ -26,6 +27,14 @@ Requires: perl-Convert-ASN1 = %{version}-%{release}
 
 %description dev
 dev components for the perl-Convert-ASN1 package.
+
+
+%package license
+Summary: license components for the perl-Convert-ASN1 package.
+Group: Default
+
+%description license
+license components for the perl-Convert-ASN1 package.
 
 
 %package perl
@@ -63,6 +72,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Convert-ASN1
+cp %{_builddir}/Convert-ASN1-0.33/LICENSE %{buildroot}/usr/share/package-licenses/perl-Convert-ASN1/ea2cb01a9b84d75f46c0509059f09d42e670bcc4
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -80,12 +91,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %defattr(-,root,root,-)
 /usr/share/man/man3/Convert::ASN1.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Convert-ASN1/ea2cb01a9b84d75f46c0509059f09d42e670bcc4
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Convert/ASN1.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Convert/ASN1.pod
-/usr/lib/perl5/vendor_perl/5.34.0/Convert/ASN1/Debug.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Convert/ASN1/IO.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Convert/ASN1/_decode.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Convert/ASN1/_encode.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Convert/ASN1/parser.pm
+/usr/lib/perl5/*
