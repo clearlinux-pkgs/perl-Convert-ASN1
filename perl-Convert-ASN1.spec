@@ -4,7 +4,7 @@
 #
 Name     : perl-Convert-ASN1
 Version  : 0.33
-Release  : 26
+Release  : 27
 URL      : https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/Convert-ASN1-0.33.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/Convert-ASN1-0.33.tar.gz
 Summary  : 'Convert between perl data structures and ASN.1 encoded packets'
@@ -73,7 +73,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Convert-ASN1
-cp %{_builddir}/Convert-ASN1-0.33/LICENSE %{buildroot}/usr/share/package-licenses/perl-Convert-ASN1/ea2cb01a9b84d75f46c0509059f09d42e670bcc4
+cp %{_builddir}/Convert-ASN1-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/perl-Convert-ASN1/ea2cb01a9b84d75f46c0509059f09d42e670bcc4 || :
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
